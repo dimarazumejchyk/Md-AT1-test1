@@ -20,6 +20,7 @@ public class MainTest {
 
     @BeforeMethod
     public void webDriverInit() {
+        System.out.println("================================================================@BeforeMethod");
         LOGGER.info("BeforeClass webDriverInit");
         WebDriverManager.chromedriver().setup();
         Configuration.startMaximized = true;
@@ -31,6 +32,7 @@ public class MainTest {
 
     @Test
     public void checkElementsFromCatalogClassifier() {
+        System.out.println("================================================================test1");
         LOGGER.info("checkElementsFromCatalogClassifier test1 info");
         CatalogPage catalogPage = new CatalogPage();
         assertThat(catalogPage.getElementsFromCatalogClassifier())
@@ -42,6 +44,8 @@ public class MainTest {
 
     @Test
     public void checkElementsFromCatalogAsideList() {
+        System.out.println("================================================================test2");
+
         LOGGER.info("checkElementsFromCatalogAsideList test2 info");
         CatalogPage catalogPage = new CatalogPage();
         catalogPage.clickOnCatalogNavigationClassifierLink("Компьютеры");
@@ -58,6 +62,8 @@ public class MainTest {
 
     @Test
     public void checkElementsAndPriceQuantityFromCatalogDropdownList() {
+        System.out.println("================================================================test3");
+
         LOGGER.info("checkElementsAndPriceQuantityFromCatalogDropdownList test3 info");
         CatalogPage catalogPage = new CatalogPage();
         catalogPage.clickOnCatalogNavigationClassifierLink("Компьютеры");
@@ -79,6 +85,8 @@ public class MainTest {
 
     @AfterClass
     public void webDriverClose() {
+        System.out.println("================================================================@AfterClass");
+
         LOGGER.info("AfterClass LocalBaseTest");
     }
 }
