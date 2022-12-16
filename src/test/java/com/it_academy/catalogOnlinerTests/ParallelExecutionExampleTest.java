@@ -1,8 +1,20 @@
 package com.it_academy.catalogOnlinerTests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import com.it_academy.listeners.AllureListener;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+@Listeners(AllureListener.class)
 
 public class ParallelExecutionExampleTest {
+
+    @BeforeClass
+    public void beforeMethod() {
+        System.out.println("=====================beforeApiTest=====================");
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+    }
 
     @Test
     public void testOne() {
