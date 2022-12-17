@@ -15,7 +15,6 @@
         <aspectj.version>1.9.8</aspectj.version>
         <allure.version>2.20.0</allure.version>
         <test.suite.path>${project.basedir}/src/test/resources/local-parallel-suite-1.xml</test.suite.path>
-        <test.suite.path>${project.basedir}/src/test/resources/local-parallel-suite-2.xml</test.suite.path>
     </properties>
 
     <build>
