@@ -2,10 +2,9 @@ package com.it_academy.catalogOnlinerTests.driverManager;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
 
 public class WebDriverLocal {
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    //private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static void setDriver(String browser) {
         switch (browser) {

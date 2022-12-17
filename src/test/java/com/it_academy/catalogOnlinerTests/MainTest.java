@@ -25,7 +25,7 @@ public class MainTest {
 
     @BeforeMethod
     public void webDriverInit() {
-        System.out.println("================================================================@BeforeMethod");
+        System.out.println("=================== @BeforeMethod ===================");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         LOGGER.info("BeforeClass webDriverInit");
         WebDriverManager.chromedriver().setup();
@@ -38,7 +38,7 @@ public class MainTest {
 
     @Test
     public void checkElementsFromCatalogClassifier() {
-        System.out.println("================================================================test1");
+        System.out.println("=================== test1 ===================");
         LOGGER.info("checkElementsFromCatalogClassifier test1 info");
         CatalogPage catalogPage = new CatalogPage();
         assertThat(catalogPage.getElementsFromCatalogClassifier())
@@ -50,7 +50,7 @@ public class MainTest {
 
     @Test
     public void checkElementsFromCatalogAsideList() {
-        System.out.println("================================================================test2");
+        System.out.println("=================== test2 ===================");
 
         LOGGER.info("checkElementsFromCatalogAsideList test2 info");
         CatalogPage catalogPage = new CatalogPage();
@@ -63,12 +63,12 @@ public class MainTest {
                         "Хранение данных", "Мультимедиа периферия", "Сетевое оборудование",
                         "Аксессуары к ноутбукам и компьютерам", "Электропитание",
                         );*/
-                .hasSize(12);
+                .hasSize(10);
     }
 
     @Test
     public void checkElementsAndPriceQuantityFromCatalogDropdownList() {
-        System.out.println("================================================================test3");
+        System.out.println("=================== test3 ===================");
 
         LOGGER.info("checkElementsAndPriceQuantityFromCatalogDropdownList test3 info");
         CatalogPage catalogPage = new CatalogPage();
@@ -91,8 +91,8 @@ public class MainTest {
 
     @AfterClass
     public void webDriverClose() {
-        System.out.println("================================================================@AfterClass");
+        System.out.println("=================== @AfterClass ===================");
         LOGGER.info("AfterClass LocalBaseTest");
     }
 }
-//clean test -DsuiteXmlFile=local-parallel-suite-1.xml
+//clean -DsuiteXmlFile=local-parallel-suite-1.xml test

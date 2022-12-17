@@ -31,13 +31,13 @@ public class APITest {
 
     @BeforeClass
     public void beforeMethod() {
-        System.out.println("=====================beforeApiTest=====================");
+        System.out.println("===================== beforeApiTest =====================");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 
     @Test
     public void apiTest1() {
-        System.out.println("=====================apiTest1=====================");
+        System.out.println("===================== apiTest1 =====================");
         ResponseBody responseBody = makeRequestAndGetResponseBody(getCatalogProductEndPoint(), configureRequestHeaders(), null);
         List<Product> products = responseBody.jsonPath()
                 .getList(PRODUCTS_JSON_PATH, Product.class);
@@ -53,7 +53,7 @@ public class APITest {
 
     @Test
     public void apiTest2() {
-        System.out.println("=====================apiTest2=====================");
+        System.out.println("===================== apiTest2 =====================");
         ResponseBody responseBody = makeRequestAndGetResponseBody(getCatalogProductRollsEndPoint(), configureRequestHeaders(), null);
         List<String> namePrefix = responseBody.jsonPath()
                 .getList(PRODUCTS_ROLLS_JSON_PATH);

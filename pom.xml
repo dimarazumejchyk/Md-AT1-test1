@@ -14,6 +14,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <aspectj.version>1.9.8</aspectj.version>
         <allure.version>2.20.0</allure.version>
+        <test.suite.path>${project.basedir}/src/test/resources/local-parallel-suite-1.xml</test.suite.path>
+        <test.suite.path>${project.basedir}/src/test/resources/local-parallel-suite-2.xml</test.suite.path>
     </properties>
 
     <build>
@@ -44,6 +46,15 @@
                         <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>${test.suite.path}</suiteXmlFiles>
+                </configuration>
             </plugin>
 
             <plugin>
